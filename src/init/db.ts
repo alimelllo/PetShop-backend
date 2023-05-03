@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 export default () => {
-  const password = "g6IomNjSFAHnJq1w";
+  
   const mongoString = 'mongodb+srv://alimelllo:g6IomNjSFAHnJq1w@cluster0.i5ilkb5.mongodb.net';
 
   mongoose.set('strictQuery', true);

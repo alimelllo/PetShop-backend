@@ -9,7 +9,6 @@ const schema = CreateSchema({
   email: { type: String, unique: true, lowercase: true },
   mobile: { type: String, unique: true },
   password: { type: String },
-  friends: [],
   profileImage : { type: String }
 });
 

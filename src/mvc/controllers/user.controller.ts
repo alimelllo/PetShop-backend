@@ -101,7 +101,7 @@ const UserUpdate = async (req: Request | any, res: Response) => {
 
 const UsersList = async (req: Request | any, res: Response) => {
 
- res.setHeader('Content-Type', 'application/json')
+//  res.setHeader('Content-Type', 'application/json')
  try {
      /* #swagger.responses[200] = {
        description: "Users fetched successfully",

@@ -13,7 +13,7 @@ const swaggerFile = require('./swagger_output.json')
 
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-export const server = app.listen(8081, () => {
+export const server = app.listen(6060, () => {
   console.log(`pet shop Server is running at https://localhost:${6060}`);
 })
 
