@@ -18,7 +18,7 @@ export const server = app.listen(6060, () => {
 })
 
 
-server.timeout = 1000000;
+// server.timeout = 1000000;
 
 dotenv.config();
 
