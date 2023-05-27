@@ -9,7 +9,8 @@ const schema = CreateSchema({
   price : { type: Number },
   discount : { type: Number },
   description : { type: String },
-  availableCount  : { type: Number }
+  availableCount  : { type: Number },
+  weight  : { type: Number }
 });
 
 module.exports = mongoose.model('products', schema);
