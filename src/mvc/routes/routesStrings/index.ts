@@ -11,6 +11,7 @@ export const Routes = {
   users: '/users',
 
   getAllProducts : '/getAllProducts',
+  AddProduct : '/AddProduct',
 
   messages:'/messages'
 };
