@@ -1,7 +1,6 @@
 import mongoose from 'mongoose';
 import { CreateSchema } from '../../helpers/createSchema';
 
-
 const schema = CreateSchema({
   name: { type: String },
   categry: { type: String },

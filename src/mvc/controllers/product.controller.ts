@@ -7,7 +7,9 @@ const ProductsList = async (req: Request | any, res: Response) => {
       description: "Users fetched successfully",
       schema: { $ref: "#/definitions/users"
     } */
-    Product.find({}).then((products: any) => {
+    const searchText = req.params.text;
+  
+    Product.find({"name": { "$regex": searchText ? searchText : "", "$options": "i" }}).then((products: any) => {
       res.status(200).send(products);
     });
   } catch (err) {
