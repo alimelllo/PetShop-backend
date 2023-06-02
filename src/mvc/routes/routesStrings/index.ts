@@ -11,7 +11,10 @@ export const Routes = {
   users: '/users',
 
   getAllProducts : '/getAllProducts/:text?',
+  getAllProductGroups : '/getAllProductGroups',
+
   AddProduct : '/AddProduct',
+  AddProductGroup:'/AddProductGroup',
 
   messages:'/messages'
 };

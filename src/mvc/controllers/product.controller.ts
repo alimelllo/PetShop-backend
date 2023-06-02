@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { Product } from '../models';
+import { Product , ProductGroup } from '../models';
 
 const ProductsList = async (req: Request | any, res: Response) => {
   try {
@@ -47,5 +47,38 @@ const AddProduct = async (req: Request | any, res: Response) => {
 
 
 
+const AddProductGroup = async (req: Request | any, res: Response) => {
+  try {
 
-export { ProductsList, AddProduct };
+    const productGroup = new ProductGroup({
+      title: req.body.title,
+      categoryName: req.body.categoryName,
+    });
+
+    productGroup.save().then(function (response) {
+      res.status(200).send(response);
+      console.log(response);
+    }).catch(function (error) {
+      console.log(error);
+    });
+
+  } catch (err) {
+    return console.log(res, err)
+  }
+};
+
+const ProductsGroupsList = async (req: Request | any, res: Response) => {
+  try {
+    const searchText = req.params.text;
+    ProductGroup.find({}).then((ProductGroups: any) => {
+      res.status(200).send(ProductGroups);
+    });
+  } catch (err) {
+    return console.log(res, err)
+  }
+};
+
+
+
+
+export { ProductsList, AddProduct , AddProductGroup , ProductsGroupsList };

@@ -7,4 +7,7 @@ const router = express.Router();
 router.get(Routes.getAllProducts, productController.ProductsList);
 router.post(Routes.AddProduct, productController.AddProduct);
 
+router.post(Routes.AddProductGroup , productController.AddProductGroup );
+router.get(Routes.getAllProductGroups, productController.ProductsGroupsList);
+
 export default router;
