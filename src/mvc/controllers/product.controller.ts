@@ -69,7 +69,6 @@ const AddProductGroup = async (req: Request | any, res: Response) => {
 
 const ProductsGroupsList = async (req: Request | any, res: Response) => {
   try {
-    const searchText = req.params.text;
     ProductGroup.find({}).then((ProductGroups: any) => {
       res.status(200).send(ProductGroups);
     });
