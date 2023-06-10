@@ -3,7 +3,7 @@ import { CreateSchema } from '../../helpers/createSchema';
 
 const schema = CreateSchema({
   name: { type: String },
-  productGroup: { type: String },
+  productGroup: { type: String , require : true },
   productImage : { type: String },
   price : { type: Number },
   discount : { type: Number },

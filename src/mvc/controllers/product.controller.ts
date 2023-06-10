@@ -7,14 +7,16 @@ const ProductsList = async (req: Request | any, res: Response) => {
       description: "Users fetched successfully",
       schema: { $ref: "#/definitions/users"
     } */
-    const searchText = req.params.text;
+    let searchText = req.params.text;
     const {productGroup} = req.params;
 
-    console.log(productGroup);
+    if( searchText === "null"){
+      searchText = "";
+    }
     
     Product.find({
       name: { $regex: searchText ? searchText : "", $options: "i" },
-      productGroup: { $regex: productGroup ? productGroup :"" , $options: "i" },
+      productGroup: { $regex: productGroup ? productGroup : "" , $options: "i" },
     }).then((products: any) => {
       res.status(200).send(products);
     });
