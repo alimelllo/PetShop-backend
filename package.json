@@ -5,7 +5,7 @@
   "engines":{
     "node" : "14.x"
   },
-  "type":"module",
+  
   "scripts": {
     "start": "npx nodemon",
     "swagger-autogen": "node swagger.js",
