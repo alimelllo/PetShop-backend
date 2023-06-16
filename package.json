@@ -2,6 +2,9 @@
   "name": "small-business-backend",
   "version": "1.0.0",
   "main": "index.ts",
+  "engines":{
+    "node" : "14.x"
+  },
   "scripts": {
     "start": "npx nodemon",
     "swagger-autogen": "node swagger.js",
