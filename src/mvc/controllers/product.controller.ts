@@ -8,17 +8,25 @@ const ProductsList = async (req: Request | any, res: Response) => {
       schema: { $ref: "#/definitions/users"
     } */
     let searchText = req.params.text;
-    const {productGroup} = req.params;
+    let {productGroup} = req.params;
+    const {pageNumber}=req.params;
 
     if( searchText === "null"){
       searchText = "";
     }
-    
+    if(productGroup === "null"){
+      productGroup = "";
+    }
     Product.find({
       name: { $regex: searchText ? searchText : "", $options: "i" },
       productGroup: { $regex: productGroup ? productGroup : "" , $options: "i" },
     }).then((products: any) => {
-      res.status(200).send(products);
+        const start = (Number(pageNumber) * 10) - 10;
+        const dataArr = [];
+        for ( let i = start ; i < Number(pageNumber) * 10; i++ ) {
+          products[i] && dataArr.push(products[i]);
+        }
+      res.status(200).send(dataArr);
     });
   } catch (err) {
     /* #swagger.responses[500] = {
