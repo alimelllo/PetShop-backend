@@ -17,6 +17,7 @@ const ProductsList = async (req: Request | any, res: Response) => {
     if(productGroup === "null"){
       productGroup = "";
     }
+   
     Product.find({
       name: { $regex: searchText ? searchText : "", $options: "i" },
       productGroup: { $regex: productGroup ? productGroup : "" , $options: "i" },
@@ -33,6 +34,21 @@ const ProductsList = async (req: Request | any, res: Response) => {
       description: "Unknown server side error",
       schema:  { $ref: "#/definitions/server side error" }
     } */
+    return console.log(res, err);
+  }
+};
+
+const getAllProductIds = (req: Request | any, res: Response) => {
+  try {
+    Product.find().select('id')
+      .then(function (response) {
+        res.status(200).send(response);
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  } catch (err) {
     return console.log(res, err);
   }
 };
@@ -94,4 +110,4 @@ const ProductsGroupsList = async (req: Request | any, res: Response) => {
   }
 };
 
-export { ProductsList, AddProduct, AddProductGroup, ProductsGroupsList };
+export { ProductsList, AddProduct, AddProductGroup, ProductsGroupsList , getAllProductIds };

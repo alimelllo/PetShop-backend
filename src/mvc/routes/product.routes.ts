@@ -5,6 +5,7 @@ import { Routes } from './routesStrings';
 const router = express.Router();
 
 router.get(Routes.getAllProducts, productController.ProductsList);
+router.get(Routes.getAllProductIds, productController.getAllProductIds);
 router.post(Routes.AddProduct, productController.AddProduct);
 
 router.post(Routes.AddProductGroup , productController.AddProductGroup );

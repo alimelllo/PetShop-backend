@@ -12,7 +12,8 @@ export const Routes = {
 
   getAllProducts : '/getAllProducts/:text?/:productGroup?/:pageNumber?',
   getAllProductGroups : '/getAllProductGroups',
-
+  getAllProductIds:'/getAllProductIds',
+  
   AddProduct : '/AddProduct',
   AddProductGroup:'/AddProductGroup',
 
