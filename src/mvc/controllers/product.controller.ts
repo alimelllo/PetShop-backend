@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Product, ProductGroup } from "../models";
+import { Product, ProductGroup, ProductImages } from "../models";
 
 const ProductsList = async (req: Request | any, res: Response) => {
   try {
@@ -37,6 +37,30 @@ const ProductsList = async (req: Request | any, res: Response) => {
     return console.log(res, err);
   }
 };
+
+const GetAllProductImages = async (req: Request | any, res: Response) => {
+  try {
+    const productId = req.params.productId;
+        ProductImages.find({ productId : productId }).then((images) => {
+          res.status(200).send(images);
+
+        })
+  } catch (err) {
+    return console.log(res, err);
+  }
+};
+
+const getProductById = async (req: Request | any, res: Response) => {
+  try {
+    const productId = req.params.productId;
+        Product.find({ _id : productId }).then((product) => {
+          res.status(200).send(product);
+        })
+  } catch (err) {
+    return console.log(res, err);
+  }
+};
+
 
 const getAllProductIds = (req: Request | any, res: Response) => {
   try {
@@ -100,6 +124,34 @@ const AddProductGroup = async (req: Request | any, res: Response) => {
   }
 };
 
+
+const AddProductImage = async (req: Request | any, res: Response) => {
+  try {
+    const { productId , productImage } = req.body;
+    
+    const newProductImage = new ProductImages({
+      productId: productId,
+      images:  productImage,
+    });
+
+    newProductImage
+      .save()
+      .then(function (response) {
+        res.status(200).send(response);
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+     
+    
+   } catch (err) {
+        return console.log(res, err);
+   }
+  }
+
+
+
 const ProductsGroupsList = async (req: Request | any, res: Response) => {
   try {
     ProductGroup.find({}).then((ProductGroups: any) => {
@@ -110,4 +162,12 @@ const ProductsGroupsList = async (req: Request | any, res: Response) => {
   }
 };
 
-export { ProductsList, AddProduct, AddProductGroup, ProductsGroupsList , getAllProductIds };
+export { 
+  ProductsList ,
+  AddProduct ,
+  AddProductGroup ,
+  ProductsGroupsList , 
+  getAllProductIds , 
+  AddProductImage , 
+  GetAllProductImages , 
+  getProductById };

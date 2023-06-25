@@ -13,9 +13,11 @@ export const Routes = {
   getAllProducts : '/getAllProducts/:text?/:productGroup?/:pageNumber?',
   getAllProductGroups : '/getAllProductGroups',
   getAllProductIds:'/getAllProductIds',
-  
+  GetAllProductImages:'/GetAllProductImages/:productId',
+  getProductById:'/getProductById/:productId',
   AddProduct : '/AddProduct',
   AddProductGroup:'/AddProductGroup',
+  AddProductImage:'/AddProductImage',
 
   messages:'/messages'
 };
