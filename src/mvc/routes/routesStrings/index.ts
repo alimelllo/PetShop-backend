@@ -10,11 +10,14 @@ export const Routes = {
   update: '/update',
   users: '/users',
 
-  getAllProducts : '/getAllProducts/:text?/:productGroup?',
+  getAllProducts : '/getAllProducts/:text?/:productGroup?/:pageNumber?',
   getAllProductGroups : '/getAllProductGroups',
-
+  getAllProductIds:'/getAllProductIds',
+  GetAllProductImages:'/GetAllProductImages/:productId',
+  getProductById:'/getProductById/:productId',
   AddProduct : '/AddProduct',
   AddProductGroup:'/AddProductGroup',
+  AddProductImage:'/AddProductImage',
 
   messages:'/messages'
 };

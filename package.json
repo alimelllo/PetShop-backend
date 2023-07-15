@@ -14,7 +14,8 @@
     "lint:fix": "npm run lint -- --fix",
     "in": "npm i --save",
     "ind": "npm i -D --save",
-    "uin": "npm uninstall --save"
+    "uin": "npm uninstall --save",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
