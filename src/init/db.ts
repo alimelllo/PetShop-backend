@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export default () => {
   
-  const mongoString = 'mongodb://root:k1yPykHOyy8vrvsnzP5R7D0w@luca.iran.liara.ir:33673/my-app?authSource=admin';
+  const mongoString = 'mongodb+srv://alimelllo:n9QrVV6CTKNALMqX@cluster0.i5ilkb5.mongodb.net';
 
   mongoose.set('strictQuery', true);
   mongoose.connect(mongoString, {}, (error: any) => {
