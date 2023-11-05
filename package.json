@@ -7,9 +7,9 @@
   },
   
   "scripts": {
-    "start": "npx nodemon",
+    "start": "npx node",
     "swagger-autogen": "node swagger.js",
-    "dev": "npx nodemon --exec ts-node index.ts",
+    "dev": "npx node --exec ts-node index.ts",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
     "in": "npm i --save",
