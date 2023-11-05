@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.ts",
   "engines":{
-    "node" : "14.x"
+    "node" : "18.x"
   },
   
   "scripts": {
-    "start": "npx node",
+    "start": "npx nodemon",
     "swagger-autogen": "node swagger.js",
-    "dev": "npx node --exec ts-node index.ts",
+    "dev": "npx nodemon --exec ts-node index.ts",
     "lint": "eslint --ignore-path .gitignore --ext .ts src/",
     "lint:fix": "npm run lint -- --fix",
     "in": "npm i --save",
