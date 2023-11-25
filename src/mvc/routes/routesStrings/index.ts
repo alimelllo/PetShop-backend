@@ -10,6 +10,7 @@ export const Routes = {
   update: '/update',
   users: '/users',
 
+  getUserInfo:'/getUserInfo',
   getAllProducts : '/getAllProducts/:text?/:productGroup?/:pageNumber?',
   getAllProductGroups : '/getAllProductGroups',
   getAllProductIds:'/getAllProductIds',
