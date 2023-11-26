@@ -20,5 +20,7 @@ export const Routes = {
   AddProductGroup:'/AddProductGroup',
   AddProductImage:'/AddProductImage',
 
+  CreateFactor:'/CreateFactor',
+  Payment:'/Payment',
   messages:'/messages'
 };
