@@ -67,7 +67,6 @@ const getAllProductIds = (req: Request | any, res: Response) => {
     Product.find().select('id')
       .then(function (response) {
         res.status(200).send(response);
-        console.log(response);
       })
       .catch(function (error) {
         console.log(error);
