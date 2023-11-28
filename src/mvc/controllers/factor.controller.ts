@@ -24,6 +24,18 @@ const getFactorById = async (req: Request | any, res: Response) => {
 };
 
 
+const getAllFactorsByUserId = async (req: Request | any, res: Response) => {
+  try {
+    const factorId = req.params.userId;
+          Factors.find({user : factorId }).then((factors) => {
+          res.status(200).send(factors);
+        })
+  } catch (err) {
+    return console.log(res, err);
+  }
+};
+
+
 const getAllFactorIds = (req: Request | any, res: Response) => {
   try {
     Factors.find().select('id')
@@ -73,5 +85,6 @@ export {
     getFactorById ,
     CreateFactor ,
     Payment ,
-    getAllFactorIds
+    getAllFactorIds,
+    getAllFactorsByUserId
 };

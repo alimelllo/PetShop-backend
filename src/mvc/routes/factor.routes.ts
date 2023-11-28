@@ -8,5 +8,7 @@ router.post(Routes.CreateFactor, factorController.CreateFactor);
 router.post(Routes.Payment, factorController.Payment);
 router.get(Routes.getAllFactorIds, factorController.getAllFactorIds);
 router.get(Routes.getFactorById, factorController.getFactorById);
+router.get(Routes.getAllFactorsByUserId, factorController.getAllFactorsByUserId);
+
 
 export default router;

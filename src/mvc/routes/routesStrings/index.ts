@@ -15,6 +15,7 @@ export const Routes = {
   getAllProductGroups : '/getAllProductGroups',
   getAllProductIds:'/getAllProductIds',
   getAllFactorIds:'/getAllFactorIds',
+  getAllFactorsByUserId:'/getAllFactorsByUserId/:userId',
   GetAllProductImages:'/GetAllProductImages/:productId',
   getProductById:'/getProductById/:productId',
   getFactorById:'/getFactorById/:factorId',
